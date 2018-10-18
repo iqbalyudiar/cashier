@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cashier App</title>
+</head>
+<body class="text-white">
+	<div class="dark-overlay">
+	    		
+	 
+	    <div class="container">
+	    	
+	    	<h1 class="text-center my-5">Welcome to My Restaurant</h1>
+	    	<table id="tabel" class="table">
+	    		
+	    		<tbody class="border-bottom border-secondary">
+					<tr>
+						<td>
+							<div class="input-group">
+								<input id="item" name="item" type="text" class="form-control" placeholder="Enter Your Order">
+							</div>
+						</td>
+						<td>
+							<div  class="input-group">
+								<input id="price" name="price" type="number" class="form-control" placeholder="Enter Your Price">
+							</div>
+						</td>
+						<td>
+							<div  class="input-group">
+								<input id="quantity" name="quantity" type="number" class="form-control" placeholder="Enter Your Quantity">
+							</div>
+						</td>
+						<td>
+
+							<div  class="input-group">
+								<input id="order" name="order" type="text" class="form-control">
+							</div>
+						</td>
+						<td>
+							<button id="entry" onclick="addHtmlTableRow();" class="btn btn-dark"> Add Order </button>
+						</td>
+						<td>
+							<button onclick="removeSelectedRow();" class="btn btn-dark"> Delete Order </button>
+						</td>
+
+					</tr>
+					
+				</tbody>
+				<tbody>
+					<tr >
+	                    <th>Item's Name</th>
+	                    <th>Price</th>
+	                    <th>Quantity</th>
+	                    <th>Order</th>
+                	</tr>
+                	
+				</tbody>
+				
+				<tfoot id="tabel2">
+					<tr>
+	                	<td></td>
+	                	<td></td>
+	                	<td>Subtotal</td>
+	                	<td id="total">0</td>
+	                	
+                	</tr>
+                	<tr>
+	                	<td></td>
+	                	<td></td>
+	                	<td>Discount</td>
+	                	<td>
+	                		<div  class="input-group">
+								<input id="discount" name="discount" type="number" class="form-control" placeholder="Enter Your Discount">
+								<div class="input-group-append">
+									<span class="input-group-text">%</span>
+								</div>
+							</div>
+	                	</td>
+	                	
+                	</tr>
+                	<tr>
+	                	<td></td>
+	                	<td></td>
+	                	<td>Total Price</td>
+	                	<td id="totalPrice">0</td>
+	                	<td><button onclick="addTotal()" class="btn btn-dark">Total</button></td>
+	                	
+                	</tr>
+				</tfoot>
+				<tfoot id="foot" class="p-0 m-0 disabled">
+					<tr>
+	                	<td></td>
+	                	<td></td>
+	                	<td></td>
+	                	<td></td>
+	                	
+                	</tr>
+				</tfoot>
+	    	</table>
+
+	    	<table id="tabel3" class="table">
+	    		<thead>
+	    			<th>Payment</th>
+
+	    		</thead>
+	    		<tbody>
+	    			<tr>
+	    				<td>Payment Total</td>
+	    				<td>
+	                		<div  class="input-group">
+								<input id="payment" name="payment" type="number" class="form-control" placeholder="Enter Your Payment Total">
+								
+							</div>
+	                	</td>
+	                	<td><button onclick="remainderClick()" class="btn btn-dark">Total</button></td>
+	    			</tr>
+	    			<tr>
+	    				<td>Remainder</td>
+	                	<td id="remainder">0</td>
+	                	
+	    				<td></td>
+	                	<td></td>
+	                	
+	    			</tr>
+	    			
+
+	    		</tbody>
+	    	</table>
+
+	    </div>
+	</div>
+	
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+<!-- <div class="container">
+		<h1 class="text-center my-5">Welcome to My Restaurant</h1>
+		<form>
+			<table class="table">
+				<thead>
+					<tr>
+						<th> No </th>
+						<th> Item's Name </th>
+						<th> Price List </th>
+						<th> Quantity </th>
+						<th> Order </th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td> 1 </td>
+						<td> Nasi Goreng </td>
+						<td>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">Rp</span>
+									<input id="price1" type="text" class="form-control" value="15000" disabled="disabled">
+								</div>
+							</div>
+						</td>
+						<td>
+							<div id="quantity1" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+						<td>
+							<div id="order1" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td> 2 </td>
+						<td> Mie Goreng </td>
+						<td>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">Rp</span>
+									<input id="price2" type="text" class="form-control" value="15000" disabled="disabled">
+								</div>
+							</div>
+						</td>
+						<td>
+							<div id="quantity2" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+						<td>
+							<div id="order2" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td> 3 </td>
+						<td> Roti Bakar </td>
+						<td>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">Rp</span>
+									<input id="price3" type="text" class="form-control" value="10000" disabled="disabled">
+								</div>
+							</div>
+						</td>
+						<td>
+							<div id="quantity3" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+						<td>
+							<div id="order3" class="input-group">
+								<input type="number" class="form-control">
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+ -->
+
+ 	<!-- <tbody class="border-bottom border-secondary">
+					<tr>
+						<td>
+							<div  class="input-group">
+								<input id="item" name="item" type="text" class="form-control" placeholder="Enter Your Order">
+							</div>
+						</td>
+						<td>
+							<div  class="input-group">
+								<input id="price" name="price" type="number" class="form-control" placeholder="Enter Your Price">
+							</div>
+						</td>
+						<td>
+							<div  class="input-group">
+								<input id="quantity" name="quantity" type="number" class="form-control" placeholder="Enter Your Quantity">
+							</div>
+						</td>
+						<td>
+							<div  class="input-group">
+								<input id="order" name="order" type="text" class="form-control">
+							</div>
+						</td>
+						<td>
+							<button onclick="addHtmlTableRow();" class="btn btn-dark"> Add Order </button>
+						</td>
+
+					</tr>
+					
+				</tbody>
+			</table> -->
