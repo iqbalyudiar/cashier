@@ -1,4 +1,4 @@
- var rIndex,
+var rIndex,
         table = document.getElementById("tabel");
             
             // Order price
@@ -53,8 +53,8 @@
                     entry = document.getElementById("order").value;
 
                     cell4.innerHTML = entry;
-                  var entry = parseFloat(entry);
-                  currency = currencyFormat(entry);
+                var entry = parseFloat(entry);
+                    currency = currencyFormat(entry);
                   // document.getElementById('entries').innerHTML += '<tr><td></td><td>' + currency + '</td></tr>';
                   total += entry;
                   document.getElementById('total').innerHTML = currencyFormat(total);
@@ -119,9 +119,15 @@
                 document.getElementById("price").value = "";
                 document.getElementById("quantity").value = "";
                 document.getElementById("order").value = "";
+
+                // var entry = document.getElementById("order");
+                //  total = total - entry;
+                //   document.getElementById('total').innerHTML = currencyFormat(total);
+
+                //   selectedRowToInput();
             }
           
-          
+
 
         
 
@@ -230,6 +236,27 @@
             }
 
         };
+
+        // function minusPrice(){
+        //   if (removeSelectedRow()) {
+        //     var newRow = table.insertRow(),
+        //             cell1 = newRow.insertCell(0),
+        //             cell2 = newRow.insertCell(1),
+        //             cell3 = newRow.insertCell(2),
+        //             cell4 = newRow.insertCell(3),
+        //             entry = document.getElementById("order").value;
+
+        //             cell4.innerHTML = entry;
+        //     var entry = parseFloat(entry);
+        //         currency = currencyFormat(entry);
+
+        //           total = total - entry;
+        //           document.getElementById('total').innerHTML = currencyFormat(total);
+        //     }
+
+          
+        // }
+      
          
 
           // function addHtmlTableRow()
